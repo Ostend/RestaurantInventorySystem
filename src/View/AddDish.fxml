@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="963.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddDishForm">
+    <children>
+        <Label layoutX="24.0" layoutY="22.0" prefHeight="22.0" prefWidth="84.0" text="Add Dish">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <HBox layoutX="46.0" layoutY="62.0" prefHeight="250.0" prefWidth="383.0" spacing="20.0">
+            <children>
+                <VBox prefHeight="246.0" prefWidth="70.0" spacing="25.0">
+                    <children>
+                        <Label text="ID" />
+                        <Label text="Name" />
+                        <Label text="Inv" />
+                        <Label text="Price/Cost" />
+                        <Label text="Max" />
+                    </children>
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin>
+                </VBox>
+                <VBox prefHeight="250.0" prefWidth="114.0" spacing="17.0">
+                    <children>
+                        <TextField fx:id="dishIDTF" disable="true" text="Auto Gen-Disabled" />
+                        <TextField fx:id="dishNameTF" />
+                        <TextField fx:id="dishStockTF" />
+                        <TextField fx:id="dishCostTF" />
+                        <TextField fx:id="dishMaxTF" />
+                    </children>
+                </VBox>
+                <Label text="Min">
+                    <HBox.margin>
+                        <Insets top="175.0" />
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="dishMinTF" prefHeight="26.0" prefWidth="97.0">
+                    <HBox.margin>
+                        <Insets top="170.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <TextField fx:id="searchTextField" layoutX="745.0" layoutY="31.0" onKeyTyped="#foodsSearchTextField" prefHeight="26.0" prefWidth="166.0" promptText="Search by ID or Name" />
+        <TableView fx:id="allFoodTableView" layoutX="453.0" layoutY="68.0" prefHeight="131.0" prefWidth="456.0">
+            <columns>
+                <TableColumn fx:id="allFoodIDCol" prefWidth="75.0" text="Food ID" />
+                <TableColumn fx:id="allFoodNameCol" prefWidth="127.20001220703125" text="FoodName" />
+                <TableColumn fx:id="allFoodStockCol" prefWidth="124.0" text="Inventory Level" />
+                <TableColumn fx:id="allFoodPriceCol" minWidth="0.0" prefWidth="128.0" text="Price/Cost per Unit" />
+            </columns>
+        </TableView>
+        <TableView fx:id="associatedFoodTableView" layoutX="453.0" layoutY="249.60000610351562" prefHeight="131.0" prefWidth="456.0">
+            <columns>
+                <TableColumn fx:id="associatedFoodIDCol" prefWidth="75.0" text="Food ID" />
+                <TableColumn fx:id="associatedFoodNameCol" prefWidth="127.60003662109375" text="Food Name" />
+                <TableColumn fx:id="associatedFoodStockCol" prefWidth="124.0" text="Inventory Level" />
+                <TableColumn fx:id="associatedFoodPriceCol" prefWidth="128.0" text="Price/Cost per Unit" />
+            </columns>
+        </TableView>
+        <Button layoutX="842.0" layoutY="208.0" mnemonicParsing="false" onAction="#onActionAddFoodB" text="ADD" />
+        <Button layoutX="745.0" layoutY="387.0" mnemonicParsing="false" onAction="#onActionRemoveFoodB" text="Remove Assiociated Food" />
+        <Button layoutX="745.0" layoutY="428.0" mnemonicParsing="false" onAction="#onActionSave" text="SAVE" />
+        <Button layoutX="833.0" layoutY="428.0" mnemonicParsing="false" onAction="#onActionCancel" text="CANCEL" />
+    </children>
+</AnchorPane>
